@@ -14,7 +14,28 @@
   <div class="field">
     <%= form.label :name %>
     <%= form.text_field :name %>
+  </div>  
+  
+  <div class="field">
+    <%= form.label :rules %>
+    <%= form.text_field :rules %>
   </div>
+
+  <div class="field">
+    <%= form.label :pieces_images %>
+    <%= form.file_field :pieces_images %>
+  </div>
+
+    <div class="field">
+    <%= form.label :cover_image %>
+    <%= form.file_field :cover_image %>
+  </div>  
+
+   <div class="field">
+    <%= form.label :pdf_rules %>
+    <%= form.file_field :pdf_rules %>
+  </div>  
+
 
   <div class="actions">
     <%= form.submit %>
