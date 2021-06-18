@@ -5,7 +5,11 @@
 <table>
   <thead>
     <tr>
-      <th>Name</th>
+      <th>Game</th>
+      <th>Rules</th>
+      <th>Pieces</th>
+      <th>cover</th>
+      <th>Pdf</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -14,6 +18,9 @@
     <% @games.each do |game| %>
       <tr>
         <td><%= game.name %></td>
+        <td><%= image_tag game.cover_image.variant(resize: "100x100",type: :grayscale ) %></td>
+        <td><%= image_tag game.pieces_images.variant(resize: "100x100",type: :grayscale ) %></td>
+        <td><%= link_to 'link', game.pdf_rules %></td>
         <td><%= link_to 'Show', game %></td>
         <td><%= link_to 'Edit', edit_game_path(game) %></td>
         <td><%= link_to 'Destroy', game, method: :delete, data: { confirm: 'Are you sure?' } %></td>
