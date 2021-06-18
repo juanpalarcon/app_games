@@ -19,7 +19,7 @@
       <tr>
         <td><%= game.name %></td>
         <td><%= image_tag game.cover_image.variant(resize: "100x100",type: :grayscale ) %></td>
-        <td><%= image_tag game.pieces_images.variant(resize: "100x100",type: :grayscale ) %></td>
+        <td><%= image_tag game.pieces_images.last.variant(resize: "100x100",type: :grayscale ) %></td>
         <td><%= link_to 'link', game.pdf_rules %></td>
         <td><%= link_to 'Show', game %></td>
         <td><%= link_to 'Edit', edit_game_path(game) %></td>
