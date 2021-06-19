@@ -3,7 +3,8 @@ class GamesController < ApplicationController
 
   # GET /games or /games.json
   def index
-    @games = Game.all
+    @games = Game.with_attached_pieces_images.all
+    
   end
 
   # GET /games/1 or /games/1.json
@@ -64,6 +65,6 @@ class GamesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def game_params
-      params.require(:game).permit(:name, :pieces_images, :rules, :pdf_rules, :cover_image)
+      params.require(:game).permit(:name, :rules, :cover_image, :pdf_rules, pieces_images: [])
     end
 end
